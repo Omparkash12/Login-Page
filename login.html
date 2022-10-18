@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./custom.css">
+    <!--  -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="login-page-os">
+        <section class='header-section-os'>
+            <div class='container-os'>
+                <div class='header-data-os'>
+                    <div class='header-brand-os'>
+                        <a href='/#'>
+                            <img src='https://cdn.shopify.com/s/files/1/0590/4354/5140/files/ValeryTrading-LogoWhite.png?v=1652347194&width=250'
+                                alt='brand_image' />
+                        </a>
+                    </div>
+
+                    <div class='header-nav-links-os'>
+                        <ul class="nav-item">
+                            <li><a href="#/">Product</a></li>
+                            <li><a href="#/">Contact</a></li>
+                            <li><a href="#/">Company</a></li>
+                            <li>
+                                <div class="try-for-free-btn-os">
+                                    <a href="#/">Try for Free </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="login-form-section-os">
+            <div class="container-os">
+                <div class="login-form-data-os">
+                    <div class="login-form-heading">
+                        <h1>User Dashboard</h1>
+                        <p>Don't have an account yet?
+                            <a href="#">Buy a License</a>
+                        </p>
+                    </div>
+                    <form class="">
+                        <div class="login-form-os">
+                            <div class="form-label">User name or Email address</div>
+                            <input type="email">
+                        </div>
+                        <div class="login-form-os">
+                            <div class="form-label">Password</div>
+                            <div class="input-password-os">
+                                <input type="password" id="id_password">
+                                <i class="fa-solid fa-eye" id="togglePassword"></i>
+                            </div>
+                        </div>
+                        <div class="signup-checkbox-os">
+                            <label class="container_checkbox">Remeber Me
+                                <input type="checkbox" />
+                                <span class="checkmark"></span>
+                            </label>
+                            <a href='#/' class='signup-forget-password-os'>Forgot Password?</a>
+                        </div>
+                        <div class='login-btn-os'>
+                            <button type='submit'>Login</button>
+                        </div>
+                    </form>
+
+                    <div class="login-account-os">
+                        <p>or log-in with</p>
+                        <div class='singup-accounts-os'>
+                            <a href='#/'>
+                                <div>
+                                    <img src='./Images/fb.svg' alt='' />
+                                </div>
+                            </a>
+                            <a href='#/'>
+                                <div>
+                                    <img src='./Images/google.svg' alt='' />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class='header-section-mobile-os'>
+            <div class="mobile-header-data-os">
+                <div class="nav-data-mobile-os">
+                    <div onclick='mobileToggleButton()' class="Toggle-mobile-button">
+                        <div class='mobile-toggle-line-os-1'></div>
+                        <div class='mobile-toggle-line-os-2'></div>
+                        <div class='mobile-toggle-line-os-3'></div>
+                    </div>
+                    <ul id='mobile-nav-os' class="mobile-nav-os">
+                        <li><a href="#/">Product</a></li>
+                        <li><a href="#/">Contact</a></li>
+                        <li><a href="#/">Company</a></li>
+                        <!-- {/* <li><button class='mobile-register-btn-os'>Register</button></li> */} -->
+                        <li><a href='#/' onClick={mobileRegisterButton} class='mobile-register-btn-os'>Try For Free</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+</body>
+<script>
+    // Mobile Navbar toggle js starts
+    function mobileToggleButton() {
+        const mobileToggleButton = document.getElementsByClassName('mobile-nav-os');
+        for (const element of mobileToggleButton) {
+            element.classList.toggle('mobile-nav-os-active');
+        }
+    }
+// Mobile Navbar toggle js ends
+</script>
+
+<script>
+    // Eye js
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#id_password');
+
+    togglePassword.addEventListener('click', function (e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+
+</html>
